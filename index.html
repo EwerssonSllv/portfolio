@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ewersson Silva | Portfolio</title>
+    <style>
+        * {
+            padding: 0;
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background-color: #010E1B;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            margin-left: 10%;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        main {
+            align-items: center;
+            background-color: #010E1B;
+            margin-top: 35%;
+        }
+
+        main .top-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            max-width: 100%;
+            margin-top: 20%;
+        }
+
+        main .principal header h1 {
+            color: azure;
+            font-size: 2rem;
+            margin-right: 117px;
+        }
+
+        main .principal h2 {
+            color: #10C43D;
+            font-size: 2rem;
+            margin-left: -53.8%;
+        }
+
+        main .principal h3 {
+            color: #10C43D;
+            font-size: 2rem;
+            margin-left: 14.6%;
+        }
+
+        main .principal div {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-right: 66px;
+        }
+
+        section div a {
+            font-size: 30px;
+            transition: transform 0.3s;
+            color: bisque;
+        }
+
+        section div a:hover {
+            transform: scale(1.2);
+        }
+
+        nav {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            margin-left: 23px;
+        }
+
+        nav a {
+            position: relative;
+            color: azure;
+            text-decoration: none;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding: 0px 0px 10px 0px;
+        }
+
+        nav a::after {
+            content: " ";
+            width: 0%;
+            height: 3px;
+            background-color: #1f6ab5;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: 0.5s ease-in-out;
+        }
+
+        nav a:hover::after {
+            width: 75%;
+
+        }
+
+        nav a::active {
+            content: " ";
+            width: 75%;
+            height: 3px;
+            background-color: #1f6ab5;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        main .about {
+            padding: 15%;
+        }
+
+        main .about h4 {
+            color: #10C43D;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin-bottom: 1em;
+            font-size: 2rem;
+        }
+
+        main .about p {
+            color: azure;
+            text-align: justify;
+            text-indent: 1em;
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        main h6 {
+            font-size: 2rem;
+            color: white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin-right: 4em;
+        }
+
+        main .experience {
+            text-align: start;
+
+        }
+
+        main .experience ul li {
+            color: white;
+            display: flex;
+            justify-content: start;
+            font-size: 1.2rem;
+            margin-bottom: 1em;
+        }
+
+        main .experience p {
+            color: white;
+            max-width: 50%;
+            font-size: 1.2rem;
+            text-align: justify;
+            margin-top: 1%;
+            margin-bottom: 2%;
+        }
+
+        main .experience b {
+            color: wheat;
+            font-size: 1.2rem;
+        }
+
+        .loading {
+            display: inline-block;
+            animation: spin 1.5s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        main h5 {
+            font-size: 2rem;
+            color: white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin-right: 4em;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 30px;
+            width: 80%;
+            margin: 30px auto;
+            margin-left: 5em;
+        }
+
+        .project-card {
+            background-color: wheat;
+            position: relative;
+            height: 300px;
+            border-radius: 12px;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s ease-in-out;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .project-card .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        .project-card:hover .overlay {
+            opacity: 1;
+        }
+
+        .project-card .overlay b {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .project-card .overlay p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        footer {
+            width: 100%;
+            color: azure;
+            padding: 20px;
+            border-top: 1px solid #1f6ab5;
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin-right: 5%;
+        }
+
+        .contacts {
+            display: flex;
+            gap: 20px;
+            width: 96%;
+            margin: 30px 0;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .contacts li {
+            display: flex;
+            color: azure;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .contacts li:hover {
+            color: #10C43D;
+        }
+    </style>
+
+</head>
+
+<body>
+    <main>
+        <div class="top-content">
+            <section class="principal">
+                <header>
+                    <h1>Ewersson Silva</h1>
+                </header>
+
+                <section>
+                    <h2>Software</h2>
+                    <div>
+                        <h3>Engineer</h3>
+                        <div>
+                            <a href="https://www.linkedin.com/seu_link" target="_blank"><ion-icon
+                                    name="logo-linkedin"></ion-icon></a>
+                            <a href="https://www.github.com/seu_usuario" target="_blank"><ion-icon
+                                    name="logo-github"></ion-icon></a>
+                            <a href="#" target="_blank"><ion-icon name="document-text"></ion-icon></a>
+                        </div>
+                    </div>
+                </section>
+
+                <nav>
+                    <a href="#pjt">Projects</a>
+                    <a href="#exp">Experience</a>
+                    <a href="#ft">Contact</a>
+                </nav>
+            </section>
+
+            <section class="about">
+                <h4>About Me</h4>
+                <p>I am a Software Engineer with a strong foundation in backend, and cloud development, now focusing on
+                    Artificial Intelligence and Machine Learning. My journey began with programming logic, algorithms,
+                    and
+                    data structures,
+                    which shaped my approach to building scalable and high-quality solutions.</p>
+                <br>
+                <p>I have experience with technologies such as Java, Kotlin, Python, and AWS, along with Spring Boot,
+                    Docker, PostgreSQL,
+                    MySQL, and CI/CD pipelines. My work emphasizes robust architectures using microservices, clean
+                    architecture, and design
+                    patterns.</p>
+                <br>
+                <p>Currently, I am expanding my expertise in AI/ML, exploring how intelligent systems can optimize
+                    processes, drive
+                    innovation, and solve complex real-world challenges.</p>
+            </section>
+        </div>
+
+        <h6 id="exp">Experience</h6>
+        <section class="experience">
+            <p><span class="loading">🔄</span> Building my professional journey...</p>
+        </section>
+
+
+        <h5 id="pjt">Projects</h5>
+        <section class="projects">
+
+            <a href="" target="_blank" class="project-card" style="background-image: url('');">
+                <div class="overlay">
+                    <b></b>
+                    <p></p>
+                </div>
+            </a>
+
+            <a href="" target="_blank" class="project-card" style="background-image: url('');">
+                <div class="overlay">
+                    <b></b>
+                    <p></p>
+                </div>
+            </a>
+
+            <a href="" target="_blank" class="project-card" style="background-image: url('');">
+                <div class="overlay">
+                    <b></b>
+                    <p></p>
+                </div>
+            </a>
+
+        </section>
+
+
+    </main>
+
+    <footer id="ft">
+        <p>Ewersson Silva All Rights Reserveds</p>
+        <ul class="contacts">
+            <li>Whatsapp</li>
+            <li>LinkedIn</li>
+            <li>GitHub</li>
+        </ul>
+    </footer>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
