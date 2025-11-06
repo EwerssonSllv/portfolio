@@ -205,55 +205,82 @@
             margin-left: 5em;
         }
 
+        /* CARD */
         .project-card {
-            background-color: wheat;
             position: relative;
-            height: 300px;
-            border-radius: 12px;
+            height: 320px;
+            border-radius: 14px;
             background-size: cover;
             background-position: center;
             overflow: hidden;
             cursor: pointer;
-            transition: transform 0.4s ease-in-out;
             text-decoration: none;
             color: inherit;
             display: block;
-
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
         }
 
         .project-card:hover {
-            transform: scale(1.05);
+            transform: scale(1.04);
+            box-shadow: 0 12px 22px rgba(0, 0, 0, 0.35);
         }
 
+        /* ESCURECIMENTO */
         .project-card .overlay {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
             color: white;
-            opacity: 0;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             padding: 20px;
-            transition: opacity 0.4s ease-in-out;
+            opacity: 0;
+            transition: opacity 0.35s ease-in-out;
         }
 
         .project-card:hover .overlay {
             opacity: 1;
         }
 
+        /* TÍTULO */
         .project-card .overlay b {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            font-weight: 600;
         }
 
+        /* DESCRIÇÃO */
         .project-card .overlay p {
-            font-size: 0.9rem;
+            font-size: 0.92rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
             line-height: 1.4;
         }
+
+        /* LINKS */
+        .project-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .project-links a {
+            padding: 8px 14px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: white;
+            font-size: 0.85rem;
+            backdrop-filter: blur(4px);
+            transition: background 0.25s ease, transform 0.25s ease;
+        }
+
+        .project-links a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
 
         footer {
             width: 100%;
@@ -322,22 +349,20 @@
 
             <section class="about">
                 <h4>About Me</h4>
-                <p>I am a Software Engineer with a strong foundation in backend, and cloud development, now focusing on
-                    Artificial Intelligence and Machine Learning. My journey began with programming logic, algorithms,
-                    and
-                    data structures,
-                    which shaped my approach to building scalable and high-quality solutions.</p>
+                <p>I am a Software Engineer specialized in building high-quality applications for Desktop, Web, and
+                    Mobile platforms.
+                    My journey began with programming logic, algorithms, and data structures — solid foundations that
+                    guide the way I design
+                    scalable and efficient systems.</p>
                 <br>
-                <p>I have experience with technologies such as Java, Kotlin, Python, and AWS, along with Spring Boot,
-                    Docker, PostgreSQL,
-                    MySQL, and CI/CD pipelines. My work emphasizes robust architectures using microservices, clean
-                    architecture, and design
-                    patterns.</p>
+                <p>I have experience with technologies such as Java, Kotlin, C#, .NET and AWS, as well as Spring Boot,
+                    Docker, PostgreSQL, MySQL, and CI/CD pipelines. My work focuses on creating robust and maintainable
+                    architectures using microservices, clean architecture, and proven design patterns.</p>
                 <br>
-                <p>Currently, I am expanding my expertise in AI/ML, exploring how intelligent systems can optimize
-                    processes, drive
-                    innovation, and solve complex real-world challenges.</p>
+                <p>I am constantly improving my skills and exploring new technologies to build solutions that are
+                    reliable, modern, and aligned with real-world needs.</p>
             </section>
+
         </div>
 
         <h6 id="exp">Experience</h6>
@@ -349,27 +374,17 @@
         <h5 id="pjt">Projects</h5>
         <section class="projects">
 
-            <a href="" target="_blank" class="project-card" style="background-image: url('');">
-                <div class="overlay">
-                    <b></b>
-                    <p></p>
-                </div>
-            </a>
+            <div class="project-card" style="background-image: url('project01.png');">
 
-            <a href="" target="_blank" class="project-card" style="background-image: url('');">
                 <div class="overlay">
-                    <b></b>
-                    <p></p>
+                    <b>DSList</b>
+                    <p>Game catalog built with a Spring Boot API. Organize games into custom lists with full ordering control.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/EwerssonSllv/DsList-Games" target="_blank">GitHub</a>
+                        <a href="https://projectdslist.netlify.app/" target="_blank">Live Demo</a>
+                    </div>
                 </div>
-            </a>
-
-            <a href="" target="_blank" class="project-card" style="background-image: url('');">
-                <div class="overlay">
-                    <b></b>
-                    <p></p>
-                </div>
-            </a>
-
+            </div>
         </section>
 
 
