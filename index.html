@@ -3,405 +3,189 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ewersson Silva | Portfolio</title>
+    <title>Ewersson Oliveira Da Silva – Software Engineer </title>
     <style>
-        * {
+        body {
+            margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        header,
+        nav,
+        section,
+        footer {
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 0.2em;
+        }
+
+        header p {
             margin: 0;
-        }
-
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            background-color: #010E1B;
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: start;
-            margin-left: 10%;
-            flex-direction: column;
-            text-align: center;
-        }
-
-        main {
-            align-items: center;
-            background-color: #010E1B;
-            margin-top: 35%;
-        }
-
-        main .top-content {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            max-width: 100%;
-            margin-top: 20%;
-        }
-
-        main .principal header h1 {
-            color: azure;
-            font-size: 2rem;
-            margin-right: 117px;
-        }
-
-        main .principal h2 {
-            color: #10C43D;
-            font-size: 2rem;
-            margin-left: -53.8%;
-        }
-
-        main .principal h3 {
-            color: #10C43D;
-            font-size: 2rem;
-            margin-left: 14.6%;
-        }
-
-        main .principal div {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin-right: 66px;
-        }
-
-        section div a {
-            font-size: 30px;
-            transition: transform 0.3s;
-            color: bisque;
-        }
-
-        section div a:hover {
-            transform: scale(1.2);
-        }
-
-        nav {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            margin-left: 23px;
+            color: #555;
         }
 
         nav a {
-            position: relative;
-            color: azure;
+            margin-right: 0.5em;
+            color: #0066cc;
             text-decoration: none;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            padding: 0px 0px 10px 0px;
         }
 
-        nav a::after {
-            content: " ";
-            width: 0%;
-            height: 3px;
-            background-color: #1f6ab5;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            transition: 0.5s ease-in-out;
+        nav a:hover {
+            text-decoration: underline;
         }
 
-        nav a:hover::after {
-            width: 75%;
-
+        h2 {
+            font-size: 1.4em;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.3em;
+            margin-bottom: 0.8em;
         }
 
-        nav a::active {
-            content: " ";
-            width: 75%;
-            height: 3px;
-            background-color: #1f6ab5;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-        }
-
-        main .about {
-            padding: 15%;
-        }
-
-        main .about h4 {
-            color: #10C43D;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            margin-bottom: 1em;
-            font-size: 2rem;
-        }
-
-        main .about p {
-            color: azure;
-            text-align: justify;
-            text-indent: 1em;
-            font-family: Arial, Helvetica, sans-serif
-        }
-
-        main h6 {
-            font-size: 2rem;
-            color: white;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            margin-right: 4em;
-        }
-
-        main .experience {
-            text-align: start;
-
-        }
-
-        main .experience ul li {
-            color: white;
-            display: flex;
-            justify-content: start;
-            font-size: 1.2rem;
+        p {
             margin-bottom: 1em;
         }
 
-        main .experience p {
-            color: white;
-            max-width: 50%;
-            font-size: 1.2rem;
-            text-align: justify;
-            margin-top: 1%;
-            margin-bottom: 2%;
+        ul {
+            list-style: none;
+            padding: 0;
         }
 
-        main .experience b {
-            color: wheat;
-            font-size: 1.2rem;
+        ul li {
+            margin-bottom: 0.5em;
         }
 
-        .loading {
-            display: inline-block;
-            animation: spin 1.5s linear infinite;
-        }
-
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        main h5 {
-            font-size: 2rem;
-            color: white;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            margin-right: 4em;
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 30px;
-            width: 80%;
-            margin: 30px auto;
-            margin-left: 5em;
-        }
-
-        /* CARD */
-        .project-card {
-            position: relative;
-            height: 320px;
-            border-radius: 14px;
-            background-size: cover;
-            background-position: center;
-            overflow: hidden;
-            cursor: pointer;
+        a {
+            color: #0066cc;
             text-decoration: none;
-            color: inherit;
-            display: block;
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
-            transition: transform 0.35s ease, box-shadow 0.35s ease;
         }
 
-        .project-card:hover {
-            transform: scale(1.04);
-            box-shadow: 0 12px 22px rgba(0, 0, 0, 0.35);
+        a:hover {
+            text-decoration: underline;
         }
 
-        /* ESCURECIMENTO */
-        .project-card .overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 20px;
-            opacity: 0;
-            transition: opacity 0.35s ease-in-out;
-        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5em;
+            }
 
-        .project-card:hover .overlay {
-            opacity: 1;
-        }
-
-        /* TÍTULO */
-        .project-card .overlay b {
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        /* DESCRIÇÃO */
-        .project-card .overlay p {
-            font-size: 0.92rem;
-            opacity: 0.9;
-            margin-bottom: 15px;
-            line-height: 1.4;
-        }
-
-        /* LINKS */
-        .project-links {
-            display: flex;
-            gap: 12px;
-        }
-
-        .project-links a {
-            padding: 8px 14px;
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
-            color: white;
-            font-size: 0.85rem;
-            backdrop-filter: blur(4px);
-            transition: background 0.25s ease, transform 0.25s ease;
-        }
-
-        .project-links a:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-3px);
-        }
-
-
-        footer {
-            width: 100%;
-            color: azure;
-            padding: 20px;
-            border-top: 1px solid #1f6ab5;
-            margin-top: 30px;
-        }
-
-        footer p {
-            margin-right: 5%;
-        }
-
-        .contacts {
-            display: flex;
-            gap: 20px;
-            width: 96%;
-            margin: 30px 0;
-            flex-direction: row;
-            justify-content: center;
-        }
-
-        .contacts li {
-            display: flex;
-            color: azure;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .contacts li:hover {
-            color: #10C43D;
+            h2 {
+                font-size: 1.2em;
+            }
         }
     </style>
-
 </head>
 
 <body>
-    <main>
-        <div class="top-content">
-            <section class="principal">
-                <header>
-                    <h1>Ewersson Silva</h1>
-                </header>
+    <div class="container">
 
-                <section>
-                    <h2>Software</h2>
-                    <div>
-                        <h3>Engineer</h3>
-                        <div>
-                            <a href="https://www.linkedin.com/seu_link" target="_blank"><ion-icon
-                                    name="logo-linkedin"></ion-icon></a>
-                            <a href="https://www.github.com/seu_usuario" target="_blank"><ion-icon
-                                    name="logo-github"></ion-icon></a>
-                            <a href="#" target="_blank"><ion-icon name="document-text"></ion-icon></a>
-                        </div>
-                    </div>
-                </section>
+        <header>
+            <h1>Ewersson Oliveira Da Silva</h1>
+            <p>Software Engineer</p>
+        </header>
 
-                <nav>
-                    <a href="#pjt">Projects</a>
-                    <a href="#exp">Experience</a>
-                    <a href="#ft">Contact</a>
-                </nav>
-            </section>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-            <section class="about">
-                <h4>About Me</h4>
-                <p>I am a Software Engineer specialized in building high-quality applications for Desktop, Web, and
-                    Mobile platforms.
-                    My journey began with programming logic, algorithms, and data structures — solid foundations that
-                    guide the way I design
-                    scalable and efficient systems.</p>
+        <section id="about">
+            <h2>About</h2>
+            <p>
+                I am Ewersson Oliveira Da Silva, a Software Engineer who excels in creating scalable and resilient
+                backend solutions,
+                as well as distributed architectures. I have experience in Java, Spring Boot, C# .NET, Kotlin, Ktor,
+                Android, Firebase,
+                JetPack Compose, Docker, CI/CD, Domain-Driven Design, and event-driven patterns.
+            </p>
+            <p><strong>Education</strong></p>
+            <p>
+                I am a Software Engineer focused on building reliable, scalable, and well-structured backend systems.
+                What truly defines me is my ability to understand a problem from end to end: even by analyzing a simple
+                API response, I can design and implement the entire underlying service — from domain modeling to
+                deployment.
                 <br>
-                <p>I have experience with technologies such as Java, Kotlin, C#, .NET and AWS, as well as Spring Boot,
-                    Docker, PostgreSQL, MySQL, and CI/CD pipelines. My work focuses on creating robust and maintainable
-                    architectures using microservices, clean architecture, and proven design patterns.</p>
+                I am actively preparing to become a high-level Software Engineer, deeply studying concepts such as
+                distributed architectures, Domain-Driven Design, and clean systems design.
                 <br>
-                <p>I am constantly improving my skills and exploring new technologies to build solutions that are
-                    reliable, modern, and aligned with real-world needs.</p>
-            </section>
-
-        </div>
-
-        <h6 id="exp">Experience</h6>
-        <section class="experience">
-            <p><span class="loading">🔄</span> Building my professional journey...</p>
+                I enjoy transforming complexity into clear and easily maintainable solutions, and continuously expanding
+                my versatility across different languages, frameworks, and architectural patterns. My goal is simple: to
+                build robust systems today and scalable systems for the future.
+            </p>
         </section>
 
+        <section id="experience">
+            <h2>Projects</h2>
+            <ul>
+                <li><a href="https://github.com/EwerssonSllv/DsList-Games" target="_blank">DsList</a> — REST API built
+                    with Spring Boot, Spring Data JPA, and PostgreSQL for managing and ordering
+                    game lists.
+                    The project follows clean architecture principles, separating responsibilities into Controllers,
+                    Services, Repositories, Entities, and DTOs.
 
-        <h5 id="pjt">Projects</h5>
-        <section class="projects">
+                </li>
 
-            <div class="project-card" style="background-image: url('project01.png');">
+                <li><a href="https://github.com/EwerssonSllv/Product-API" target="_blank">Products API</a> — Simple
+                    Spring Boot project used as a playground to study and practice
+                    software engineering concepts: DTOs, tests, security (JWT), best
+                    practices, architecture, Docker, and more.
 
-                <div class="overlay">
-                    <b>DSList</b>
-                    <p>Game catalog built with a Spring Boot API. Organize games into custom lists with full ordering control.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/EwerssonSllv/DsList-Games" target="_blank">GitHub</a>
-                        <a href="https://projectdslist.netlify.app/" target="_blank">Live Demo</a>
-                    </div>
-                </div>
-            </div>
+                </li>
+                <li>
+                    <a href="" target="_blank">Netflix Interface Android</a> —
+                    An Android project built with Kotlin that recreates the Netflix UI, focusing on clean layouts,
+                    reusable components, and a responsive interface that mirrors the original streaming platform’s
+                    design principles.
+                </li>
+
+                <li>
+                    <a href="" target="_blank">Movie API for Netflix Interface Android</a> —
+                    A movie API developed using Spring Boot and Kotlin, designed to power the Netflix Interface project.
+                    It features structured exception handling, JWT-based authentication, layered architecture
+                    (controller, service, repository), and scalable domain modeling.
+                </li>
+
+                <li>
+                    <a href="" target="_blank">Temperature Converter</a> —
+                    A simple and intuitive Android application built with Kotlin that converts temperatures across
+                    multiple units, providing a clean UI and instant conversion results.
+                </li>
+
+                <li>
+                    <a href="" target="_blank">BMI Calculator</a> —
+                    A lightweight Kotlin Android app that calculates Body Mass Index (BMI) with clear visual feedback
+                    and a straightforward interface aimed at quick and accurate results.
+                </li>
+
+            </ul>
         </section>
 
+        <section id="contact">
+            <h2>Contact</h2>
+            <ul>
+                <li>Email: <a href="mailto:ewerssonsllv@gmail.com">ewerssonsllv@gmail.com</a></li>
+                <li><a href="https://www.linkedin.com/in/ewerssonsllv/" rel="noopener" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/EwerssonSllv" rel="noopener" target="_blank">GitHub</a></li>
+            </ul>
+        </section>
 
-    </main>
+        <footer>
+            <p>&copy; 2025 Ewerson Oliveira Da Silva. All rights reserved.</p>
+        </footer>
 
-    <footer id="ft">
-        <p>Ewersson Silva All Rights Reserveds</p>
-        <ul class="contacts">
-            <li>Whatsapp</li>
-            <li>LinkedIn</li>
-            <li>GitHub</li>
-        </ul>
-    </footer>
-
-
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </div>
 </body>
 
 </html>
